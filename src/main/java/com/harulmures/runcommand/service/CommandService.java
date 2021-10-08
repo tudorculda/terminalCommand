@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.text.MessageFormat;
 import java.util.List;
 
@@ -23,9 +24,10 @@ public class CommandService {
 
     private List<String> openedVlcPids;
 
-    public void runVlc(String file){
+    public void runVlc(String file) throws FileNotFoundException {
 
         String command = MessageFormat.format(vlcCommand, vlcFolder + File.separator + file);
         log.info("Will run the following command: {}", command);
+        throw new IllegalArgumentException("nu am gasit fisierul");
     }
 }
