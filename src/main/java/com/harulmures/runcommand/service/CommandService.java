@@ -44,7 +44,7 @@ public class CommandService {
 
     }
 
-    private void terminatePreviousProcesses() {
+    public void terminatePreviousProcesses() {
         openedVideoProcesses.forEach(this::killProcess);
         openedVideoProcesses.clear();
     }
